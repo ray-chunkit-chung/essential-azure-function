@@ -6,9 +6,11 @@ essential-azure-function
 
 <https://learn.microsoft.com/en-us/azure/azure-functions/create-first-function-vs-code-python?pivots=python-mode-decorators>
 
+using dockerhub desktop container dev env with vscode
+
 ## Step 1 Download azure function core
 
-Download core
+Download azure function core
 
 ```bash
 curl https://packages.microsoft.com/keys/microsoft.asc | gpg --dearmor > microsoft.gpg
@@ -42,8 +44,8 @@ sudo apt-get install azure-functions-core-tools-4
 wget https://packages.microsoft.com/config/debian/11/packages-microsoft-prod.deb -O packages-microsoft-prod.deb
 sudo dpkg -i packages-microsoft-prod.deb
 rm packages-microsoft-prod.deb
-sudo apt-get update && \
-  sudo apt-get install -y dotnet-sdk-7.0
+sudo apt-get update
+sudo apt-get install -y dotnet-sdk-7.0
 ```
 
 ## Step 5 Init/Start function (Python)
