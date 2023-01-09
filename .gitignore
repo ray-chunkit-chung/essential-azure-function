@@ -30,3 +30,7 @@
 *.exe
 *.out
 *.app
+
+# local
+*.pyz
+get-pip.py
