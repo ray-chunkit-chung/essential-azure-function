@@ -88,5 +88,66 @@ Check in browser http://localhost:7071/api/MyHttpTrigger?name=Azure%20Rocks
 # Step 6 Setup unit test (Python)
 Coming soon...
 
-# Step 7 
+# Step 7 Create a function app
 
+We need a function app to publish the function
+https://learn.microsoft.com/en-us/azure/azure-functions/scripts/functions-cli-create-serverless
+
+Install azure cli
+```
+curl -sL https://aka.ms/InstallAzureCLIDeb | sudo bash
+```
+
+Set app variables by saving in .env file
+```
+export SUBSCRIPTION="xxx"
+export TENANT="xxx"
+export LOCATION="eastus"
+export RESOURCE_GROUP="xxx"
+export STORAGE_ACCOUNT="xxx"
+export SKU_STORAGE="Standard_LRS"
+export FUNCTION_APP="xxx"
+export FUNCTION_VERSION="4"
+export PYTHON_VERSION="3.9"
+```
+
+Set subscription
+```
+source .env
+az login --tenant $TENANT
+az account set -s $SUBSCRIPTION
+```
+
+Create resource group, storage account, and functionapp service plan 
+```
+source .env
+az group create --name $RESOURCE_GROUP \
+                --location $LOCATION
+az storage account create --name $STORAGE_ACCOUNT \
+                          --location $LOCATION \
+                          --resource-group $RESOURCE_GROUP \
+                          --sku $SKU_STORAGE
+az functionapp create --name $FUNCTION_APP \
+                      --storage-account $STORAGE_ACCOUNT \
+                      --consumption-plan-location $LOCATION \
+                      --resource-group $RESOURCE_GROUP \
+                      --functions-version $FUNCTION_VERSION \
+                      --os-type Linux \
+                      --runtime python \
+                      --runtime-version $PYTHON_VERSION
+```
+
+# Step 8 Publish function to function app
+
+```
+func azure functionapp publish $FUNCTION_APP
+```
+test in browser https://xxxx.azurewebsites.net/api/myhttptrigger?name=yeaeeaeaehh
+
+
+# Finally Delete resources 
+
+After experiment, delete all resources to avoid charging a lot of money
+```
+az group delete --name $RESOURCE_GROUP
+```
