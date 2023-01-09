@@ -158,5 +158,6 @@ test in browser <https://xxxx.azurewebsites.net/api/myhttptrigger?name=yeaeeaeae
 After experiment, delete all resources to avoid charging a lot of money
 
 ```bash
-az group delete --name $RESOURCE_GROUP
+source .env
+az group delete -y --name $RESOURCE_GROUP
 ```
