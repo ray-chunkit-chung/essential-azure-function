@@ -46,6 +46,8 @@ sudo dpkg -i packages-microsoft-prod.deb
 rm packages-microsoft-prod.deb
 sudo apt-get update
 sudo apt-get install -y dotnet-sdk-7.0
+sudo apt-get install -y dotnet-sdk-6.0
+sudo apt-get install -y dotnet-sdk-3.1
 ```
 
 ## Step 5 Init/Start function (Python)
@@ -149,11 +151,64 @@ az functionapp create --name $FUNCTION_APP \
 
 ## Step 8 Publish function to function app
 
+Set function.json authLevel as anonymous to allow public visit
+
+```json
+"authLevel": "anonymous",
+```
+
+Publish function to app
+
 ```bash
+func azure functionapp fetch-app-settings $FUNCTION_APP
+func azure storage fetch-connection-string $STORAGE_ACCOUNT
 func azure functionapp publish $FUNCTION_APP
 ```
 
-test in browser <https://xxxx.azurewebsites.net/api/myhttptrigger?name=yeaeeaeaehh>
+Test in browser <https://xxxx.azurewebsites.net/api/myhttptrigger?name=yeaeeaeaehh>
+
+## Bonus A C# function
+
+Many MS demo app are in C#. So we give an example here
+
+<https://learn.microsoft.com/en-us/azure/azure-functions/functions-run-local?tabs=v4%2Clinux%2Ccsharp%2Cazurecli%2Cbash>
+
+```bash
+func init MyFunctionProj
+cd MyFunctionProj
+func new --template "Http Trigger" --name MyHttpTrigger
+```
+
+Visit to verify <http://localhost:7071/api/myhttptrigger?name=hahahhahaa>
+
+Set MyHttpTrigger.cs auth level as Anonymous to allow public visit
+
+```C#
+AuthorizationLevel.Anonymous
+```
+
+Publish function to app
+
+```bash
+source .env
+func azure functionapp fetch-app-settings $FUNCTION_APP
+func azure storage fetch-connection-string $STORAGE_ACCOUNT
+func azure functionapp publish $FUNCTION_APP
+```
+
+Verify at <https://test3raychunkitchungapp.azurewebsites.net/api/myhttptrigger?name=1212121>
+
+**(Optional)** Also try your luck with .Net 7 x Function Core 4
+<https://devblogs.microsoft.com/dotnet/dotnet-7-comes-to-azure-functions/>
+
+<https://learn.microsoft.com/en-us/dotnet/core/install/linux-debian>
+
+```bash
+func init MyFunctionProj --worker-runtime dotnet-isolated --target-framework net7.0
+cd MyFunctionProj
+func new --template "HTTP trigger"
+func start
+```
 
 ## Finally Delete resources
 

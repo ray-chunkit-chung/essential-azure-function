@@ -34,3 +34,5 @@
 # local
 *.pyz
 get-pip.py
+bin/
+obj/
