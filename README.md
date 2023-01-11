@@ -66,7 +66,7 @@ choose python (or other languages)
 func azure functionapp fetch-app-settings <FunctionAppName>
 
 # Get the Connection string for a specific storage account:
-func azure storage fetch-connection-string test3raychunkitchung
+func azure storage fetch-connection-string xxxxxx
 ```
 
 **(Optional)** Install python & pip
@@ -196,7 +196,7 @@ func azure storage fetch-connection-string $STORAGE_ACCOUNT
 func azure functionapp publish $FUNCTION_APP
 ```
 
-Verify at <https://test3raychunkitchungapp.azurewebsites.net/api/myhttptrigger?name=1212121>
+Verify at <https://xxxx.azurewebsites.net/api/myhttptrigger?name=1212121>
 
 **(Optional)** Also try your luck with .Net 7 x Function Core 4
 <https://devblogs.microsoft.com/dotnet/dotnet-7-comes-to-azure-functions/>
