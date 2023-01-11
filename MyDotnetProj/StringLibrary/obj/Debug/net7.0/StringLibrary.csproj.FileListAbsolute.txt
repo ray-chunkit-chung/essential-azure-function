@@ -1,0 +1,12 @@
+/com.docker.devenvironments.code/MyDotnetProj/StringLibrary/bin/Debug/net7.0/StringLibrary.deps.json
+/com.docker.devenvironments.code/MyDotnetProj/StringLibrary/bin/Debug/net7.0/StringLibrary.dll
+/com.docker.devenvironments.code/MyDotnetProj/StringLibrary/bin/Debug/net7.0/StringLibrary.pdb
+/com.docker.devenvironments.code/MyDotnetProj/StringLibrary/obj/Debug/net7.0/StringLibrary.csproj.AssemblyReference.cache
+/com.docker.devenvironments.code/MyDotnetProj/StringLibrary/obj/Debug/net7.0/StringLibrary.GeneratedMSBuildEditorConfig.editorconfig
+/com.docker.devenvironments.code/MyDotnetProj/StringLibrary/obj/Debug/net7.0/StringLibrary.AssemblyInfoInputs.cache
+/com.docker.devenvironments.code/MyDotnetProj/StringLibrary/obj/Debug/net7.0/StringLibrary.AssemblyInfo.cs
+/com.docker.devenvironments.code/MyDotnetProj/StringLibrary/obj/Debug/net7.0/StringLibrary.csproj.CoreCompileInputs.cache
+/com.docker.devenvironments.code/MyDotnetProj/StringLibrary/obj/Debug/net7.0/StringLibrary.dll
+/com.docker.devenvironments.code/MyDotnetProj/StringLibrary/obj/Debug/net7.0/refint/StringLibrary.dll
+/com.docker.devenvironments.code/MyDotnetProj/StringLibrary/obj/Debug/net7.0/StringLibrary.pdb
+/com.docker.devenvironments.code/MyDotnetProj/StringLibrary/obj/Debug/net7.0/ref/StringLibrary.dll
